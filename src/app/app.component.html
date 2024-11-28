@@ -22,11 +22,11 @@
     >
     <div>
         <ul id="nav-mobile" style="display: flex; gap: 40px; padding-right: 20px">
-            <div [ngClass]="{'active': isActive('/login')}" style="padding: 20px;">
+            <div [ngClass]="{'active': isActive('/login')}">
                   <a routerLink="/login" style="text-decoration: none; color: white">login</a>
             </div>
             <!-- cursos -->
-            <div [ngClass]="{'active': isActive('/cursos')}" style="padding: 20px;" >
+            <div [ngClass]="{'active': isActive('/cursos')}">
                 <li style="list-style-type: none">
                   <a routerLink="/cursos" style="text-decoration: none; color: white"
                     >cursos</a
@@ -34,9 +34,9 @@
                 </li>
             </div>
             <!-- curso com id -->
-            <div [ngClass]="{'active': isActive('/curso')}" style="padding: 20px;" >
+            <div [ngClass]="{'active': isActive('/curso')}">
                 <li style="list-style-type: none">
-                  <a [routerLink]="['curso', idCurso.value]" style="text-decoration: none; color: white"
+                  <a [routerLink]="['/curso', idCurso.value]" style="text-decoration: none; color: white"
                     >curso com id</a
                   >
                 </li>
@@ -48,6 +48,6 @@
 
 <div>
     <span>entre com o id do curso</span>
-    <input #idCurso type="text">
+    <input #idCurso type="text" style="border: 1px solid red">
   <router-outlet></router-outlet>
 </div>
