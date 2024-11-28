@@ -18,7 +18,7 @@ export class CursosService {
     for(let i = 0; i<cursos.length; i++){
       let curso = cursos[i]
       // console.log(curso)
-      if(curso.id === id){
+      if(Number(curso.id) === Number(id)){
         return curso
       }
     }
