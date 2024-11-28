@@ -13,7 +13,7 @@ export class CursoDetalheComponent implements OnInit {
 
   id!: number;
   inscricao!: Subscription;
-  curso!:any;
+  curso:any = null;
 
   constructor(private route: ActivatedRoute, private cursosService: CursosService){
     // console.log(this.route)
@@ -26,6 +26,11 @@ export class CursoDetalheComponent implements OnInit {
       this.id = params['id'];
 
       this.curso = this.cursosService.getCursoById(this.id);
+      console.log('curso retornado:', this.curso)
+
+      if(!this.curso){
+        console.log(`curos com id: ${this.id} nao encontrado`)
+      }
     })
   }
 
